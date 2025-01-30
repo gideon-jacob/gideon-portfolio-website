@@ -1,33 +1,35 @@
-#root 
-  max-width: 1280px
-  margin: 0 auto
-  padding: 2rem
-  text-align: center
+@use './sass' as *
 
-.logo 
-  height: 6em
-  padding: 1.5em
-  will-change: filter
-  transition: filter 300ms
+%base-container
+    display: flex 
+    flex-direction: column 
+    gap: $base-gap * 2
 
-.logo:hover 
-  filter: drop-shadow(0 0 2em #646cffaa)
+.bg-container
+    @extend %base-container
 
-.logo.react:hover 
-  filter: drop-shadow(0 0 2em #61dafbaa)
+    background-color: $base-background
+    min-height: 100vh
+    padding: $base-padding  
 
-@keyframes logo-spin 
-  from 
-    transform: rotate(0deg)
-  to 
-    transform: rotate(360deg)
+.details-container
+    @extend %base-container
 
-@media (prefers-reduced-motion: no-preference) 
-  a:nth-of-type(2) .logo 
-    animation: logo-spin infinite 20s linear
+.works-container
+    @extend %base-container
+    flex-grow: 1
 
-.card 
-  padding: 2em
 
-.read-the-docs 
-  color: #888
+%container
+    box-shadow: $box-shadow
+    border-radius: $border-radius
+    padding: $base-padding 
+
+.section
+    @extend %container
+    background-color: $base-background-2
+
+.card
+    @extend %container
+    background-color: $card-background
+    min-height: 200px

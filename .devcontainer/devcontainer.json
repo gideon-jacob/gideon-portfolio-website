@@ -31,7 +31,8 @@
 				"mhutchie.git-graph",
 				"ms-azuretools.vscode-docker",
 				"Syler.sass-indented",
-				"dsznajder.es7-react-js-snippets"
+				"dsznajder.es7-react-js-snippets",
+				"Threespot.frontline-sass-snippets"
 			],
 			"settings": {
 				"editor.tabSize": 4,
