@@ -16,7 +16,7 @@
 
         .icon {
             font-size: $base-font-size;
-            margin-bottom: -0.125 * $base-font-size;
+            margin-bottom: (-0.0625 * 2) * $base-font-size;
             color: $text-primary;
         }
     }

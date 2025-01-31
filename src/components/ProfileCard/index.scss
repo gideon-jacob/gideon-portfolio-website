@@ -46,6 +46,8 @@
 
         border: 1px solid $text-secondary;
         border-radius: $border-radius * 0.5;
+        outline: none;
+        cursor: pointer;
 
         &:hover {
             background-color: $text-primary;

@@ -16,7 +16,7 @@ const ProfileCard: React.FC = () => {
 
             <div>
                 <h1>Gideon Jacob</h1>
-                <p>⚡ Full Stack Developer | Business Enthusiast | Docker | AWS | React&nbsp;⚡</p>
+                <p>Full Stack Developer | Business Enthusiast | Expertise in React, Docker and AWS</p>
             </div>
 
             <a

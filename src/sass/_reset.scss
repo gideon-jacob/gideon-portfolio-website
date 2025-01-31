@@ -19,6 +19,13 @@ h1 {
     color: $text-primary;
 }
 
+h2 {
+    margin: 0;
+    font-size: $base-font-size * 1.25;
+    font-weight: 500;
+    color: $text-primary;
+}
+
 p {
     margin: 0;
     font-size: $base-font-size * 0.875;
