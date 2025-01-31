@@ -1,30 +1,14 @@
-import { Component } from 'react'
-import ProfileCard from './components/ProfileCard';
-import './App.sass'
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Home from './page/Home';
 
-class App extends Component {
-  render() {
-    return (
-      <div className='bg-container'>
-        <div className='details-container'>
-          <ProfileCard />
-          <div className="card">card</div>
-        </div>
-
-        <div className='works-container'>
-          {/* Projects Seciton */}
-          <div className="section">
-            <div className="card">card</div>
-          </div>
-
-          {/* Contributions Section */}
-          <div className="section">
-            <div className="card">card</div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+// TODO Add a new route for the About page and 404 page
+const App: React.FC = () => {
+  return (
+    <Routes>
+      <Route path='/' element={<Home />} />
+    </Routes>
+  );
 }
 
 export default App

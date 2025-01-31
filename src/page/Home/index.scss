@@ -1,0 +1,33 @@
+@use '../../sass' as *;
+
+%base-container {
+    display: flex;
+    flex-direction: column;
+    gap: $base-gap * 2;
+}
+
+.bg-container {
+    @extend %base-container;
+
+    background-color: $base-background;
+    min-height: 100vh;
+    padding: $base-padding;
+
+    @include lg {
+        padding: $base-padding * 2.5;
+        flex-direction: row;
+    }
+}
+
+.details-container {
+    @extend %base-container;
+    
+    @include lg {
+        max-width: 30vw;
+    }
+}
+
+.works-container {
+    @extend %base-container;
+    flex-grow: 1;
+}

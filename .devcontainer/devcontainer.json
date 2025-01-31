@@ -29,10 +29,14 @@
 		"vscode": {
 			"extensions": [
 				"mhutchie.git-graph",
-				"ms-azuretools.vscode-docker",
-				"Syler.sass-indented",
 				"dsznajder.es7-react-js-snippets",
-				"Threespot.frontline-sass-snippets"
+				"sibiraj-s.vscode-scss-formatter",
+				"gencer.html-slim-scss-css-class-completion",
+				"viijay-kr.react-ts-css",
+				"Threespot.frontline-sass-snippets",
+				"formulahendry.auto-rename-tag",
+				"ExodiusStudios.comment-anchors",
+				"Jannchie.codetime"
 			],
 			"settings": {
 				"editor.tabSize": 4,

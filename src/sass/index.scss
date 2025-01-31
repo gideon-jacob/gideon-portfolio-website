@@ -1,0 +1,44 @@
+// use rulesets
+@use 'reset';
+@use 'sass:color';
+@use 'variables' as *;
+
+// export sass components
+@forward 'variables';
+@forward 'breakpoints';
+
+// selectors used in more than one component
+%container {
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+    padding: $base-padding;
+}
+
+.section {
+    @extend %container;
+    background-color: $base-background-2;
+}
+
+.card {
+    @extend %container;
+    background-color: $card-background;
+    min-height: 200px;
+}
+
+.view-more {
+    font-size: 0.875 * $base-font-size;
+    color: $text-primary;
+    display: block;
+    text-align: right;
+    font-weight: 500;
+    padding: $base-padding $base-padding * 0.5;
+
+    .icon {
+        font-size: $base-font-size;
+        margin-bottom: -0.25 * $base-font-size;
+    }
+
+    &:hover {
+        color: color.adjust($text-primary, $lightness: 15%);
+    }
+}

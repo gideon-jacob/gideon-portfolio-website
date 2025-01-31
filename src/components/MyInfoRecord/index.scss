@@ -1,0 +1,23 @@
+@use '../../sass' as *;
+
+.info-record {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 0.875 * $base-font-size;
+    padding: $base-padding $base-padding * 0.5;
+
+    .info-record-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5 * $base-gap;
+        font-weight: 600;
+
+        .icon {
+            font-size: $base-font-size;
+            margin-bottom: -0.125 * $base-font-size;
+            color: $text-primary;
+        }
+    }
+}
