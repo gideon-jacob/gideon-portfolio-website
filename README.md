@@ -1,50 +1,54 @@
-# React + TypeScript + Vite
+# Gideon's Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the repository for my personal portfolio website. This project showcases my skills and experience as a software developer, and it's designed to be a living document that evolves as I continue to learn and grow.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Check out the live version of my portfolio here!](https://portfolio.gideonjacob.in)
 
-## Expanding the ESLint configuration
+## Screenshots
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![Screenshot of the portfolio website's home page.](https://via.placeholder.com/800x400.png?text=Portfolio+Screenshot)
 
-- Configure the top-level `parserOptions` property like this:
+## About This Project
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+This portfolio is built with a modern tech stack, including:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+*   **React:** For building a dynamic and responsive user interface.
+*   **TypeScript:** For writing clean, maintainable, and type-safe code.
+*   **Vite:** For a fast and efficient development experience.
+*   **Sass:** For writing modular and reusable styles.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Features
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+*   **Project Showcase:** A dedicated section to highlight my most recent and relevant projects.
+*   **Interactive Timeline:** A visual representation of my career journey and key milestones.
+*   **Contact Information:** Easy access to my email and social media profiles.
+
+## Get in Touch
+
+I'm always open to new opportunities, collaborations, and interesting ideas. If you'd like to connect, please feel free to reach out to me at [gideonjacob.in@gmail.com](mailto:gideonjacob.in@gmail.com).
+
+## Running the Project Locally
+
+To run this project locally, you'll need to have Node.js and Docker installed. Then, follow these steps:
+
+1.  Clone this repository:
+
+    ```bash
+    git clone https://github.com/gideonkoh/gideon-portfolio-website.git
+    ```
+
+2.  Navigate to the project directory:
+
+    ```bash
+    cd gideon-portfolio-website
+    ```
+
+3.  Run the following Docker command:
+
+    ```bash
+    docker run --rm -p 3000:3000 -v $(pwd):/workspace -w /workspace mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm /bin/bash -c "npm install && npm run dev"
+    ```
+
+4.  Open your browser and navigate to `http://localhost:3000`.
