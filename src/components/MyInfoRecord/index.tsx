@@ -17,14 +17,14 @@ const MyInfoRecord: React.FC<InfoProps> = props => {
         <div className='info-record'>
             <div className='info-record-header'>
                 <Logo className='icon' /> 
-                <p>{ title }</p>
+                <p className='info-record-title'>{ title }</p>
             </div>
 
             {/* Display only if isLink is undefined or null */}
             {isLink ?? <p>{value}</p>}
             
             {/* Display only if isLink = true */}
-            {isLink && <a href={url} target='_blank'>{ value }</a>}
+            {isLink && <a href={url} target='_blank' rel='noopener noreferrer' className='info-record-link'>{ value }</a>}
         </div>
     )
 }
