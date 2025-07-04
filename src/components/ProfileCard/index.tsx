@@ -1,35 +1,37 @@
 import React from "react";
 import './index.scss'
 
-// TODO 1: Replace the following URLs with your own avatar and resume URLs
-const avatarUrl = "https://media.licdn.com/dms/image/v2/D4D03AQG2KWjigyc7QA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718249729153?e=1743638400&v=beta&t=zgsnCkSh6zAa77aQ4hAVb9uGTz8gdms05-xkUzw04XA";
-const resumeUrl = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf";
+const avatarUrl = "https://res.cloudinary.com/ddixkodsj/image/upload/t_Profile/v1751614802/LinkedIn3.2_xfdmwg.jpg";
+const resumeUrl = "https://d78lukmxqzxnm.cloudfront.net/GideonJacob_R%C3%A9sum%C3%A9.pdf";
 
 const ProfileCard: React.FC = () => {
-    return (
-        <div className="profile-card">
-            <img
-                src={avatarUrl} 
-                alt="avatar"
-                loading="lazy"
-            />
+	return (
+		<div className="profile-card">
+			<div
+				style={{
+					backgroundImage: `url(${avatarUrl})`
+				}}
+				className="avatar"
+				aria-label="Profile photo of Gideon Jacob"
+				role="img"
+			/>
 
-            <div>
-                <h1>Gideon Jacob</h1>
-                <p>Full Stack Developer | Business Enthusiast | Expertise in React, Docker and AWS</p>
-            </div>
+			<div>
+				<h1>Gideon Jacob S</h1>
+				<p>Aspiring Software Developer | Highly Collaborative | Actively Learning Advanced DSA & System Design</p>
+			</div>
 
-            <a
-                href={resumeUrl} 
-                target="_blank"
-                className="btn btn-outline btn-sm text-xs mt-6 opacity-50"
-                download
-                rel="noreferrer"
-            >
-                Download Resume
-            </a>
-        </div>
-    );
+			<a
+				href={resumeUrl}
+				target="_blank"
+				className="btn btn-outline btn-sm text-xs mt-6 opacity-50"
+				download
+				rel="noreferrer"
+			>
+				Download Resume
+			</a>
+		</div>
+	);
 }
 
 export default ProfileCard
