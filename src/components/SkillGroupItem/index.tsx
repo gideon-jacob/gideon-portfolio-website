@@ -16,8 +16,8 @@ const SkillGroupItem: React.FC<SkillGroupItemProps> = ({ title, skills }) => {
 						<div className="card-header-title">{title}</div>
 					</div>
 					<div className="card-body">
-						{skills.map((skill, index) => (
-							<span key={index} className="skill-badge">{skill}</span>
+						{skills.map((skill) => (
+							<span key={skill} className="skill-badge">{skill}</span>
 						))}
 					</div>
 				</div>

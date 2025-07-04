@@ -16,13 +16,13 @@ $breakpoints: (
         }
     }
 
-    @if $portrait {
+    @else if $portrait {
         @media (min-width: map.get($breakpoints, 'xs')) and (orientation: portrait) {
             @content;
         }
     }
 
-    @else if not $landscape and not $portrait {
+    @else {
         @media (min-width: map.get($breakpoints, 'xs')) {
             @content;
         }
@@ -36,18 +36,19 @@ $breakpoints: (
         }
     }
 
-    @if $portrait {
+    @else if $portrait {
         @media (min-width: map.get($breakpoints, 'sm')) and (orientation: portrait) {
             @content;
         }
     }
 
-    @else if not $landscape and not $portrait {
+    @else {
         @media (min-width: map.get($breakpoints, 'sm')) {
             @content;
         }
     }
 }
+
 @mixin md ($landscape: false, $portrait: false) {
     @if $landscape {
         @media (min-width: map.get($breakpoints, 'md')) and (orientation: landscape) {
@@ -55,7 +56,7 @@ $breakpoints: (
         }
     } 
     
-    @if $portrait {
+    @else if $portrait {
         @media (min-width: map.get($breakpoints, 'md')) and (orientation: portrait) {
             @content;
         }
@@ -67,16 +68,19 @@ $breakpoints: (
         }
     }
 }
+
 @mixin lg {
     @media (min-width: map.get($breakpoints, 'lg')) {
         @content;
     }
 }
+
 @mixin xl {
     @media (min-width: map.get($breakpoints, 'xl')) {
         @content;
     }
 }
+
 @mixin xxl {
     @media (min-width: map.get($breakpoints, 'xxl')) {
         @content;
