@@ -26,31 +26,26 @@
   // .project-card-description {
   // }
 
-  .icon {
-    margin-bottom: -1px;
-  }
-
   .project-card-badges {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 6px;
     row-gap: 10px;
-
+    
     .badge {
-      padding: 1px 10px;
-      border-radius: 9999px; // Fully rounded corners
-      font-size: 10px;
-      box-shadow: $badge-shadow; // Subtle shadow
-      min-width: 50px; // Ensure badges don't look like circles
-      text-align: center;
+      @extend %base-badge;
     }
-
+    
     .device-badge {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
+
+      .icon {
+        margin-bottom: -1px;
+      }
 
       &.mobile {
         background-color: $mobile-badge-color;
@@ -79,18 +74,17 @@
   .project-card-links-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: $base-gap * 0.5;
 
     button {
       display: flex;
       flex-direction: row;
       justify-content: center;
-      // align-items: center;
       gap: 0.5em;
 
       color: $text-primary;
       background-color: $base-background-2;
-      // line-height: 0;
 
       padding: 0.75em 2em;
       border: 1px solid $base-background;
@@ -104,6 +98,10 @@
         transition: all 0.3s ease-in-out;
         color: $base-background-2;
         background-color: color.adjust($text-primary, $lightness: -15%);
+      }
+
+      .icon {
+        margin-bottom: -0.25em;
       }
     }
   }

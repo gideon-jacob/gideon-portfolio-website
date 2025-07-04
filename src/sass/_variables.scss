@@ -9,6 +9,14 @@ $base-background: $snow-bg-1;
 $base-background-2: $snow-bg-2;
 $card-background: #ffffff;
 
+// badge colors (more professional/subtle)
+$mobile-badge-color: #007bff; // Bootstrap primary blue
+$tablet-badge-color: #17a2b8; // Bootstrap info cyan
+$computer-badge-color: #28a745; // Bootstrap success green
+$tech-badge-color: #6c757d; // Muted gray
+
+$badge-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Subtle shadow
+
 // Font Families
 $base-font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 $font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;

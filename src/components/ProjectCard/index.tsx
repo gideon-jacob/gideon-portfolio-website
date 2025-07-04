@@ -39,7 +39,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <div className="project-card">
       <div className="project-card-thumbnail">
-        <img src={thumbnail} alt="Project thumbnail" />
+        <img src={thumbnail} alt="Project thumbnail" loading="lazy" />
       </div>
 
       <div className="project-card-body">
@@ -63,12 +63,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
         <div className="project-card-links-container">
           <button onClick={() => window.open(githubLink, '_blank')}>
-            <FaGithub />
+            <FaGithub className='icon' />
             GitHub
           </button>
           {liveLink && (
             <button onClick={() => window.open(liveLink, '_blank')}>
-              <FaGlobe />
+              <FaGlobe className='icon' />
               Live Demo
             </button>
           )}

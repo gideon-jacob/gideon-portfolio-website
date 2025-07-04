@@ -1,0 +1,35 @@
+@use "../../sass/grid";
+@use "../../sass" as *;
+
+.skills-card-container {
+  @extend .card;
+  padding: 1.5 * $base-padding;
+  width: 100%;
+}
+
+.skill-group-list {
+  position: relative;
+  margin-top: 20px;
+  // padding-bottom: 20px;
+
+	display: flex;
+	flex-direction: column;
+	gap: $base-gap * 1;
+}
+
+$skill-group-line-width: 3px;
+
+.skill-group-list::before {
+  /* Vertical line */
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: $skill-group-line-width;
+  height: 100%;
+  border-radius: 2px;
+
+  background: $text-primary;
+  opacity: 0.3;
+}

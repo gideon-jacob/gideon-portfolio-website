@@ -12,9 +12,10 @@
     background-color: $base-background;
     min-height: 100vh;
     padding: $base-padding;
-
+    
     @include lg {
-        padding: $base-padding * 2.5;
+        padding: 0 $base-padding * 2.5;
+        padding-bottom: 0;
         flex-direction: row;
     }
 }
@@ -23,11 +24,35 @@
     @extend %base-container;
     
     @include lg {
-        max-width: 30vw;
+        min-width: 25vw;
+        max-width: 25vw;
+        max-height: 100vh; 
+        padding-top: $base-padding * 2.5;
+        padding-bottom: $base-padding * 2.5;
+        overflow-y: scroll;
+
+        scrollbar-width: none; // Firefox
+        -ms-overflow-style: none; // IE and Edge
+        &::-webkit-scrollbar {
+            display: none; // Chrome, Safari, Opera
+        }
     }
 }
 
 .works-container {
     @extend %base-container;
     flex-grow: 1;
+
+    @include lg {
+        max-height: 100vh;
+        padding-top: $base-padding * 2.5;
+        padding-bottom: $base-padding * 2.5;
+        overflow-y: scroll;
+
+        scrollbar-width: none; // Firefox
+        -ms-overflow-style: none; // IE and Edge
+        &::-webkit-scrollbar {
+            display: none; // Chrome, Safari, Opera
+        }
+    }
 }
