@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.scss";
 import SkillGroupItem from "../SkillGroupItem";
 
 const SkillsCard: React.FC = () => {
+    const [isExpanded, setIsExpanded] = useState(false);
     return (
         <div className="skills-card-container">
             <h2>Skills</h2>
 
-            <div className="skill-group-list">
+            <div className="skill-group-list" style={{
+                "--max-height": isExpanded ? "none" : "280px",
+                "--overflow-y": isExpanded ? "visible" : "hidden"
+            } as React.CSSProperties}>
+
                 <SkillGroupItem
                     title="Frontend"
                     skills={["HTML", "CSS", "SASS", "Bootstrap", "JavaScript", "TypeScript", "React JS"]}
@@ -44,7 +49,14 @@ const SkillsCard: React.FC = () => {
                 />
             </div>
 
-            {/* <ViewAll to="/about#techStack" className="link" /> */}
+            <div className="view-all-button-container">
+                <button className="view-all-button" onClick={() => setIsExpanded(!isExpanded)}>
+                    <span className="view-all-button-text">
+                        {isExpanded ? "\u00AB" : "\u00BB"}
+                    </span>
+                    {isExpanded ? "view less" : "view all"}
+                </button>
+            </div>
         </div>
     );
 };
