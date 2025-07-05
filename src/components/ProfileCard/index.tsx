@@ -16,7 +16,7 @@ const ProfileCard: React.FC = () => {
 				role="img"
 			/>
 
-			<div>
+			<div className="profile-info">
 				<h1>Gideon Jacob S</h1>
 				<p>Aspiring Software Developer | Highly Collaborative | Actively Learning Advanced DSA & System Design</p>
 			</div>
