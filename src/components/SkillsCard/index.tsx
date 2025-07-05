@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./index.scss";
 import SkillGroupItem from "../SkillGroupItem";
 
 const SkillsCard: React.FC = () => {
     const [isExpanded, setIsExpanded] = useState(false);
+    const skillsRef = useRef<HTMLDivElement>(null);
+
     return (
-        <div className="skills-card-container">
+        <div ref={skillsRef} className="skills-card-container">
             <h2>Skills</h2>
 
             <div className="skill-group-list" style={{
@@ -50,7 +52,17 @@ const SkillsCard: React.FC = () => {
             </div>
 
             <div className="view-all-button-container">
-                <button className="view-all-button" onClick={() => setIsExpanded(!isExpanded)}>
+                <button 
+                    className="view-all-button"
+                    onClick={() => {
+                        if (isExpanded) {
+                            setTimeout(() => {
+                                skillsRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+                            }, 10);
+                        }
+                        setIsExpanded(!isExpanded);
+                    }}
+                >
                     <span className="view-all-button-text">
                         {isExpanded ? "\u00AB" : "\u00BB"}
                     </span>
