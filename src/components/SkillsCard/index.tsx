@@ -1,13 +1,16 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import "./index.scss";
 import SkillGroupItem from "../SkillGroupItem";
 
-const SkillsCard: React.FC = () => {
+interface SkillsCardProps {
+    projectsRef: React.RefObject<HTMLHeadingElement>;
+}
+
+const SkillsCard: React.FC<SkillsCardProps> = ({ projectsRef }) => {
     const [isExpanded, setIsExpanded] = useState(false);
-    const skillsRef = useRef<HTMLDivElement>(null);
 
     return (
-        <div ref={skillsRef} className="skills-card-container">
+        <div className="skills-card-container">
             <h2>Skills</h2>
 
             <div className="skill-group-list" style={{
@@ -17,7 +20,7 @@ const SkillsCard: React.FC = () => {
 
                 <SkillGroupItem
                     title="Frontend"
-                    skills={["HTML", "CSS", "SASS", "Bootstrap", "JavaScript", "TypeScript", "React JS"]}
+                    skills={["HTML", "CSS", "Sass", "Bootstrap", "JavaScript", "TypeScript", "React JS"]}
                 />
 
                 <SkillGroupItem
@@ -57,7 +60,7 @@ const SkillsCard: React.FC = () => {
                     onClick={() => {
                         if (isExpanded) {
                             setTimeout(() => {
-                                skillsRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+                                projectsRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
                             }, 10);
                         }
                         setIsExpanded(!isExpanded);

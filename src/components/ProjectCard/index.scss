@@ -1,9 +1,28 @@
-@use 'sass:color';
-@use '../../sass' as *;
-@use '../../sass/grid';
+@use "sass:color";
+@use "../../sass" as *;
+@use "../../sass/grid";
 
 .project-card {
   @extend .card;
+  // T/ODO: Once all projects are added, add flex-grow: 1;
+  // flex-grow: 1;
+  height: fit-content;
+  position: relative;
+
+  .project-card-status {
+    position: absolute;
+    top: -0.5em;
+    right: -0.5em;
+
+    color: $base-background-2;
+    background-color: $text-primary;
+    padding: 0.25em 0.75em;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
 
   .project-card-thumbnail {
     img {
@@ -23,6 +42,14 @@
     padding-left: $base-padding * 0.25;
   }
 
+  .project-card-title {
+    font-size: 1.25em;
+    font-weight: 600;
+    color: $text-primary;
+    margin-top: 0;
+    margin-bottom: $base-margin * 0.5;
+  }
+
   // .project-card-description {
   // }
 
@@ -31,12 +58,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 6px;
-    row-gap: 10px;
-    
+    row-gap: 6px;
+
     .badge {
       @extend %base-badge;
     }
-    
+
     .device-badge {
       display: flex;
       align-items: center;
@@ -81,15 +108,17 @@
       display: flex;
       flex-direction: row;
       justify-content: center;
+      flex-grow: 1;
       gap: 0.5em;
 
       color: $text-primary;
       background-color: $base-background-2;
 
-      padding: 0.75em 2em;
+      font-size: 0.75rem;
+      padding: 0.75em 1.5em;
       border: 1px solid $base-background;
       border-radius: $border-radius * 0.75;
-      
+
       cursor: pointer;
       outline: none;
       transition: all 0.2s ease-in-out;
@@ -103,7 +132,14 @@
       .icon {
         margin-bottom: -0.25em;
       }
+
+      .button-text {
+        &::after {
+          content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+          margin: 0 3px 0 5px;
+          opacity: 0.45;
+        }
+      }
     }
   }
 }
-
