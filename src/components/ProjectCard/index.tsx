@@ -4,20 +4,27 @@ import './index.scss';
 
 interface ProjectCardProps {
   thumbnail: string;
+  title: string;
   description: string;
-  githubLink: string;
+  githubLinks: {
+    client?: string;
+    server?: string;
+  } | {src: string;};
   liveLink?: string;
   technologies: string[];
   devices: ('mobile' | 'tablet' | 'computer')[];
+  isCompleted: boolean;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   thumbnail,
+  title,
   description,
-  githubLink,
+  githubLinks,
   liveLink,
   technologies,
   devices,
+  isCompleted,
 }) => {
   const getDeviceIcon = (device: 'mobile' | 'tablet' | 'computer') => {
     switch (device) {
@@ -38,12 +45,20 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
   return (
     <div className="project-card">
+      {!isCompleted && (
+        <span className="project-card-status">
+          In Progress
+        </span>
+      )}
       <div className="project-card-thumbnail">
         <img src={thumbnail} alt="Project thumbnail" loading="lazy" />
       </div>
 
       <div className="project-card-body">
-        <p className="project-card-description">{description}</p>
+        <div className="project-card-title-description-container">
+          <h3 className="project-card-title">{title}</h3>
+          <p className="project-card-description">{description}</p>
+        </div>
 
         <div className="project-card-badges">
           {devices.map((device) => (
@@ -52,7 +67,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             </span>
           ))}
         </div>
-        
+
         <div className="project-card-badges">
           {technologies.map((tech) => (
             <span key={tech} className="badge tech-badge">
@@ -62,14 +77,28 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
 
         <div className="project-card-links-container">
-          <button onClick={() => window.open(githubLink, '_blank')}>
-            <FaGithub className='icon' />
-            GitHub
-          </button>
+          {'client' in githubLinks && githubLinks.client && (
+            <button onClick={() => window.open(githubLinks.client, '_blank')}>
+              <FaGithub className='icon' />
+              <span className='button-text'>{'GitHub (Frontend)'}</span>
+            </button>
+          )}
+          {'server' in githubLinks && githubLinks.server && (
+            <button onClick={() => window.open(githubLinks.server, '_blank')}>
+              <FaGithub className='icon' />
+              <span className='button-text'>{'GitHub (Backend)'}</span>
+            </button>
+          )}
+          {'src' in githubLinks && githubLinks.src && (
+            <button onClick={() => window.open(githubLinks.src, '_blank')}>
+              <FaGithub className='icon' />
+              <span className='button-text'>{'GitHub'}</span>
+            </button>
+          )}
           {liveLink && (
             <button onClick={() => window.open(liveLink, '_blank')}>
               <FaGlobe className='icon' />
-              Live Demo
+              <span className='button-text'>{'Live Demo'}</span>
             </button>
           )}
         </div>

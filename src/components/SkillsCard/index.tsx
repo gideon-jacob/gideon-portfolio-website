@@ -20,7 +20,7 @@ const SkillsCard: React.FC<SkillsCardProps> = ({ projectsRef }) => {
 
                 <SkillGroupItem
                     title="Frontend"
-                    skills={["HTML", "CSS", "SASS", "Bootstrap", "JavaScript", "TypeScript", "React JS"]}
+                    skills={["HTML", "CSS", "Sass", "Bootstrap", "JavaScript", "TypeScript", "React JS"]}
                 />
 
                 <SkillGroupItem
