@@ -53,6 +53,21 @@
   // .project-card-description {
   // }
 
+  .project-card-warning-info {
+    margin-top: 0.5em;
+    line-height: 1.5;
+    font-size: 0.75rem;
+    font-style: italic;
+    color: $text-secondary;
+
+    .icon {
+      font-size: 0.65rem;
+      position: relative;
+      bottom: -0.1em;
+      margin-right: 0.5em;
+    }
+  }
+
   .project-card-badges {
     display: flex;
     flex-direction: row;

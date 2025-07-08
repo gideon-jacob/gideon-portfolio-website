@@ -1,15 +1,16 @@
 import React from 'react';
-import { FaMobileAlt, FaTabletAlt, FaLaptop, FaGithub, FaGlobe } from 'react-icons/fa';
+import { FaMobileAlt, FaTabletAlt, FaLaptop, FaGithub, FaGlobe, FaInfoCircle } from 'react-icons/fa';
 import './index.scss';
 
 interface ProjectCardProps {
   thumbnail: string;
   title: string;
   description: string;
+  warningInfo?: string;
   githubLinks: {
     client?: string;
     server?: string;
-  } | {src: string;};
+  } | { src: string; };
   liveLink?: string;
   technologies: string[];
   devices: ('mobile' | 'tablet' | 'computer')[];
@@ -20,6 +21,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   thumbnail,
   title,
   description,
+  warningInfo,
   githubLinks,
   liveLink,
   technologies,
@@ -58,6 +60,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <div className="project-card-title-description-container">
           <h3 className="project-card-title">{title}</h3>
           <p className="project-card-description">{description}</p>
+
+          {
+            warningInfo && (
+              <p className="project-card-warning-info">
+                <FaInfoCircle className='icon' />
+                {warningInfo}
+              </p>
+            )
+          }
+
         </div>
 
         <div className="project-card-badges">
