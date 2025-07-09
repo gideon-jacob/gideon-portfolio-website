@@ -2,10 +2,17 @@
 @use "../../sass" as *;
 @use "../../sass/grid";
 
+@mixin toggle($color) {
+  align-self: flex-end;
+  color: $color;
+  text-decoration: underline;
+  text-decoration-color: $color;
+  cursor: pointer;
+}
+
 .project-card {
   @extend .card;
-  // T/ODO: Once all projects are added, add flex-grow: 1;
-  // flex-grow: 1;
+  flex-grow: 1;
   height: fit-content;
   position: relative;
 
@@ -15,7 +22,7 @@
     right: -0.5em;
 
     color: $base-background-2;
-    background-color: $text-primary;
+    background-color: $inprogress-badge-color;
     padding: 0.25em 0.75em;
     border-radius: $border-radius;
     box-shadow: $box-shadow;
@@ -50,8 +57,12 @@
     margin-bottom: $base-margin * 0.5;
   }
 
-  // .project-card-description {
-  // }
+  .project-card-description {
+    .description-toggle {
+      @include toggle($text-secondary);
+      font-size: $base-font-size * 0.75;
+    }
+  }
 
   .project-card-warning-info {
     margin-top: 0.5em;
@@ -74,11 +85,11 @@
     flex-wrap: wrap;
     gap: 6px;
     row-gap: 6px;
-
+    
     .badge {
       @extend %base-badge;
     }
-
+    
     .device-badge {
       display: flex;
       align-items: center;
@@ -107,9 +118,19 @@
     }
 
     .tech-badge {
-      background-color: $tech-badge-color;
-      color: white;
+      background-color: $text-primary;
+      color: $base-background;
       box-shadow: $badge-shadow;
+    }
+
+    .tech-badge-toggle {
+      $color: color.adjust($text-secondary, $lightness: 25%);
+      @include toggle($color);
+      font-size: $base-font-size * 0.65;
+      font-weight: 600;
+      text-decoration-thickness: 0.1em;
+      text-underline-offset: 0.1em;
+      line-height: 1.65;
     }
   }
 

@@ -10,10 +10,10 @@ $base-background-2: $snow-bg-2;
 $card-background: #ffffff;
 
 // badge colors (more professional/subtle)
-$mobile-badge-color: #007bff; // Bootstrap primary blue
-$tablet-badge-color: #17a2b8; // Bootstrap info cyan
-$computer-badge-color: #28a745; // Bootstrap success green
-$tech-badge-color: #6c757d; // Muted gray
+$mobile-badge-color: #487fba; // Bootstrap primary blue
+$tablet-badge-color: #43b5c7; // Bootstrap info cyan
+$computer-badge-color: #4ebd66; // Bootstrap success green
+$inprogress-badge-color: $snow-text-1; // Muted gray
 
 $badge-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Subtle shadow
 
